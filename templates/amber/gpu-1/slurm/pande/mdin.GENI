@@ -1,0 +1,31 @@
+&cntrl
+{% if gen == 0 %}
+ntx=1,          ! coordinates, no velocities
+irest=0,        ! do not restart
+{% else %}
+ntx=5,          ! coordinates and velocities
+irest=1,        ! restart
+{% endif %}
+ntxo=2,         ! save final files as netcdf
+ntpr=80000,     ! write energy (160 ps)
+ntwr=160000,     ! write restart (320 ps)
+iwrap=1,        ! wrap into periodic box
+ntwx=80000,     ! write coordinates (160 ps)
+ioutfm=1,       ! use netcdf
+nstlim=15000000,   ! number of steps to run (30 ns)
+dt=0.002,       ! timesteps (2 fs)
+ntt=3,          ! langevin
+temp0=300,      ! temp
+tempi=300,      ! generate initial velocities
+ig=-1,          ! use datetime for random seed
+gamma_ln=2,     ! 2 / ps
+ntp=1,          ! isotropic pressure scaling
+barostat=2,     ! monte-carlo
+mcbarint=100,   ! barostat interval
+pres0=1.0,      ! pressure (1 bar)
+taup=1.0,       ! pressure relaxation time (1 ps)
+ntc=2,          ! constrain bonds involving H
+ntf=2,          ! don't compute forces from bonds with h
+ntave=0         ! turn off running averages
+/
+
