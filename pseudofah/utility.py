@@ -2,7 +2,10 @@ import textwrap
 
 
 def yes_no(question):
-    letter, *_ = input("{} (y/n): ".format(question)).lower().strip()
+    answer = input("{} (y/n): ".format(question)).lower().strip()
+    if len(answer) <= 0:
+        return yes_no(question)
+    letter = answer[0]
     if letter == "y":
         return True
     elif letter == "n":
