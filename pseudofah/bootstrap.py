@@ -21,6 +21,7 @@ os.symlink("../../../runs/{}.inpcrd".format(run), "inpcrd")
 os.symlink("../../../runs/{}.prmtop".format(run), "prmtop")
 
 import subprocess
+
 subprocess.call([
     "python",
     "templates/next.py",
