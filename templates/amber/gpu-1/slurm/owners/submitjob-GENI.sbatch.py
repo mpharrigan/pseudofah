@@ -31,9 +31,6 @@ subprocess.call([
 
 
 ## Submit new job
-from get_time_left import get_time_left
-hours = get_time_left(jobid)
-print("Starting mdrun with {} hours".format(hours))
-ret = subprocess.call(["bash", "simulate-{{gen}}.sh", str(hours)])
+ret = subprocess.call(["bash", "simulate-{{gen}}.sh"])
 sys.exit(ret)
 
